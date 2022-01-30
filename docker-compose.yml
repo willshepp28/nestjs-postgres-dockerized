@@ -6,7 +6,7 @@ services:
       context: .
     depends_on:
       - postgres
-    enviroment:
+    environment:
         DATABASE_URL: "postgres://user:password@postgres:5432/db"
         NODE_ENV: development
         PORT: 3000
@@ -14,10 +14,10 @@ services:
       - "8080:3000"
 
   postgres:
-      image: postgres14.1
+      image: postgres:14.1
       ports:
          - "35000:5432"
-      enviroment:
+      environment:
           POSTGRES_USER: user
           POSTGRES_PASSWORD: password
           POSTGRES_DB: db
